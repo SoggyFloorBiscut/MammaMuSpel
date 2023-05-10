@@ -7,7 +7,7 @@ public class PlayerLogic : MonoBehaviour
     float timer;
     bool canMove;
     Vector3 direction;
-    [SerializeField] GameObject pageL, pageR;
+    [SerializeField] GameObject pageLogic;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,13 +39,15 @@ public class PlayerLogic : MonoBehaviour
         }
         else
         {
-            if (gameObject.transform.position.x > 8.5f)
+            if (gameObject.transform.position.x > 8.5f && canMove == false)
             {
-                pageR.GetComponent<PageTurn>().enabled = true;
+                pageLogic.GetComponent<PageTurn>().TurnPage(true);
+                canMove = true;
             }
-            else if (gameObject.transform.position.x < -8.5)
+            else if (gameObject.transform.position.x < -8.5 && canMove == false)
             {
-                pageL.GetComponent<PageTurn>().enabled = true;
+                pageLogic.GetComponent<PageTurn>().TurnPage(false);
+                canMove = true;
             }
             else
             {

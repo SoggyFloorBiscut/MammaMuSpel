@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 39383430}
   - component: {fileID: 39383431}
+  - component: {fileID: 39383432}
   m_Layer: 0
   m_Name: Under Page (4)
   m_TagString: Untagged
@@ -197,7 +198,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.46274513, g: 0.13333334, b: 0.13333334, a: 1}
+  m_Color: {r: 0.7686275, g: 0.7686275, b: 0.7686275, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -207,6 +208,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &39383432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39383429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0779ff5a44141064e8a3e5a6363e9805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  right: 0
+  y: 0
+  pageLogic: {fileID: 1555077970}
 --- !u!1 &227918450
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,8 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d66d097b3312a9438d2a0ba2395697b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pageL: {fileID: 629593532}
-  pageR: {fileID: 494493560}
+  pageLogic: {fileID: 1555077970}
 --- !u!212 &227918452
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -316,6 +331,7 @@ GameObject:
   m_Component:
   - component: {fileID: 235521173}
   - component: {fileID: 235521174}
+  - component: {fileID: 235521175}
   m_Layer: 0
   m_Name: Under Page (5)
   m_TagString: Untagged
@@ -380,7 +396,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.46274513, g: 0.13333334, b: 0.13333334, a: 1}
+  m_Color: {r: 0.6431373, g: 0.6431373, b: 0.6431373, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -390,6 +406,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &235521175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235521172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0779ff5a44141064e8a3e5a6363e9805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  right: 0
+  y: 1
+  pageLogic: {fileID: 1555077970}
 --- !u!1 &357824787
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,7 +515,6 @@ GameObject:
   m_Component:
   - component: {fileID: 494493563}
   - component: {fileID: 494493562}
-  - component: {fileID: 494493561}
   m_Layer: 0
   m_Name: PageR
   m_TagString: Untagged
@@ -492,31 +522,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &494493561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 494493560}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 053091f81fada414bb2d106d97efe4ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movespeed: 2.75
-  turnspeed: 5.35
-  player: {fileID: 227918450}
-  pagesR:
-  - {fileID: 1592943605}
-  - {fileID: 1230232217}
-  - {fileID: 1934114054}
-  - {fileID: 1451334125}
-  pagesL:
-  - {fileID: 39383431}
-  - {fileID: 235521174}
-  - {fileID: 1893563342}
-  - {fileID: 1561341147}
 --- !u!212 &494493562
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -762,7 +767,6 @@ GameObject:
   m_Component:
   - component: {fileID: 629593533}
   - component: {fileID: 629593535}
-  - component: {fileID: 629593534}
   m_Layer: 0
   m_Name: PageL
   m_TagString: Untagged
@@ -785,31 +789,6 @@ Transform:
   m_Father: {fileID: 1664939333}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &629593534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 629593532}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 053091f81fada414bb2d106d97efe4ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movespeed: -2.75
-  turnspeed: 5.35
-  player: {fileID: 227918450}
-  pagesR:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  pagesL:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!212 &629593535
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -988,7 +967,7 @@ Transform:
   - {fileID: 1893563341}
   - {fileID: 1561341146}
   m_Father: {fileID: 1664939333}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1099186262
 GameObject:
@@ -1084,6 +1063,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1230232216}
   - component: {fileID: 1230232217}
+  - component: {fileID: 1230232218}
   m_Layer: 0
   m_Name: Under Page (1)
   m_TagString: Untagged
@@ -1158,6 +1138,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1230232218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230232215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0779ff5a44141064e8a3e5a6363e9805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  right: 1
+  y: 1
+  pageLogic: {fileID: 1555077970}
 --- !u!1 &1275119074
 GameObject:
   m_ObjectHideFlags: 0
@@ -1252,6 +1247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1451334124}
   - component: {fileID: 1451334125}
+  - component: {fileID: 1451334126}
   m_Layer: 0
   m_Name: Under Page (3)
   m_TagString: Untagged
@@ -1326,6 +1322,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1451334126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451334123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0779ff5a44141064e8a3e5a6363e9805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  right: 1
+  y: 3
+  pageLogic: {fileID: 1555077970}
 --- !u!1 &1535323302
 GameObject:
   m_ObjectHideFlags: 0
@@ -1410,6 +1421,59 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1555077970
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1555077971}
+  - component: {fileID: 1555077972}
+  m_Layer: 0
+  m_Name: 'Pagelogic '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1555077971
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555077970}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 10, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1664939333}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1555077972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555077970}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 053091f81fada414bb2d106d97efe4ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movespeed: 2.75
+  turnspeed: 5.35
+  player: {fileID: 227918450}
+  active: {fileID: 0}
+  pagel: {fileID: 629593532}
+  pager: {fileID: 494493560}
+  pagesR: 04000000030000000200000001000000
+  pagesL: fcfffffffdfffffffeffffffffffffff
+  OnPage: 0
 --- !u!1 &1561341145
 GameObject:
   m_ObjectHideFlags: 0
@@ -1420,6 +1484,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1561341146}
   - component: {fileID: 1561341147}
+  - component: {fileID: 1561341148}
   m_Layer: 0
   m_Name: Under Page (7)
   m_TagString: Untagged
@@ -1484,7 +1549,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.46274513, g: 0.13333334, b: 0.13333334, a: 1}
+  m_Color: {r: 0.37647063, g: 0.37647063, b: 0.37647063, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1494,6 +1559,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1561341148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561341145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0779ff5a44141064e8a3e5a6363e9805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  right: 0
+  y: 3
+  pageLogic: {fileID: 1555077970}
 --- !u!1 &1592943603
 GameObject:
   m_ObjectHideFlags: 0
@@ -1504,6 +1584,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1592943604}
   - component: {fileID: 1592943605}
+  - component: {fileID: 1592943606}
   m_Layer: 0
   m_Name: Under Page (0)
   m_TagString: Untagged
@@ -1578,6 +1659,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1592943606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592943603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0779ff5a44141064e8a3e5a6363e9805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  right: 1
+  y: 0
+  pageLogic: {fileID: 1555077970}
 --- !u!1 &1664939332
 GameObject:
   m_ObjectHideFlags: 0
@@ -1608,6 +1704,7 @@ Transform:
   m_Children:
   - {fileID: 494493563}
   - {fileID: 629593533}
+  - {fileID: 1555077971}
   - {fileID: 1046417886}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -1706,6 +1803,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1893563341}
   - component: {fileID: 1893563342}
+  - component: {fileID: 1893563343}
   m_Layer: 0
   m_Name: Under Page (6)
   m_TagString: Untagged
@@ -1770,7 +1868,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.46274513, g: 0.13333334, b: 0.13333334, a: 1}
+  m_Color: {r: 0.4901961, g: 0.4901961, b: 0.4901961, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1780,6 +1878,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1893563343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893563340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0779ff5a44141064e8a3e5a6363e9805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  right: 0
+  y: 2
+  pageLogic: {fileID: 1555077970}
 --- !u!1 &1934114052
 GameObject:
   m_ObjectHideFlags: 0
@@ -1790,6 +1903,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1934114053}
   - component: {fileID: 1934114054}
+  - component: {fileID: 1934114055}
   m_Layer: 0
   m_Name: Under Page (2)
   m_TagString: Untagged
@@ -1864,3 +1978,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1934114055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934114052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0779ff5a44141064e8a3e5a6363e9805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  right: 1
+  y: 2
+  pageLogic: {fileID: 1555077970}
