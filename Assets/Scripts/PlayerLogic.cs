@@ -6,9 +6,9 @@ public class PlayerLogic : MonoBehaviour
 {
     float timer, OGspeed;
     [SerializeField] float speed;
-    bool canMove, disco = false;
-
-    Vector3 direction;
+    bool canMove, crough, disco = false;
+    GameObject Carry = null;
+    Vector3 direction, ogScale;
     [SerializeField] GameObject pageLogic;
     SpriteRenderer sprite;
     // Start is called before the first frame update
@@ -42,13 +42,35 @@ public class PlayerLogic : MonoBehaviour
                 timer = 0.5f;
                 direction = new Vector3(0, 2);
                 speed = OGspeed;
+                crough = false;
                 gameObject.transform.localScale = new Vector3(0.5f, 0.5f);
+                if (Carry != null)
+                {
+                    if (Carry.tag == "Use")
+                    {
+                        Carry.transform.SetParent(null);
+                        Carry.transform.position = new Vector3(Carry.transform.position.x, -1.5f);
+                        Carry.transform.localScale = ogScale;
+                        Carry.GetComponent<Collider2D>().enabled = true;
+                        Carry.tag = "Item";
+                        Carry = null;
+                    }
+                    else
+                    {
+                        Carry.tag = "Use";
+                    }          
+                }
+
             }
-            if (Input.GetKey(KeyCode.DownArrow))
+            if (Input.GetKeyDown(KeyCode.DownArrow))
             {
+                gameObject.GetComponent<Collider2D>().enabled = false;
                 gameObject.transform.localScale = new Vector3(0.5f, 0.2f);
                 speed = OGspeed/2;
+                crough = true;
+                gameObject.GetComponent<Collider2D>().enabled = true;
             }
+            
             if (Input.GetKey(KeyCode.G))
             {
                 disco = true;
@@ -113,16 +135,23 @@ public class PlayerLogic : MonoBehaviour
         
 
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Item"))
+        if (collision.gameObject.CompareTag("Item") && crough == true && Carry == null)
         {
+            Carry = collision.gameObject;
+            ogScale = Carry.transform.localScale;
+            collision.transform.position = gameObject.transform.position;
+            collision.transform.position += new Vector3(0, 0.2f);
             collision.gameObject.GetComponent<Collider2D>().enabled = false;
             collision.transform.SetParent(gameObject.transform);
-            collision.transform.position = gameObject.transform.position += new Vector3(0,1);
+            
+            Carry.transform.localScale -= new Vector3(0, Carry.transform.localScale.y/2);
 
+           
         }
     }
-    
+
 
 }
