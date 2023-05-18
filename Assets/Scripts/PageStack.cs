@@ -5,12 +5,12 @@ using UnityEngine;
 public class PageStack : MonoBehaviour
 {
     
-    [SerializeField] bool right;
+    public bool right;
     //[SerializeField] GameObject PageR, PageL;
     Color col, bg = new Color(0.5f,0.2f,0.2f);
     SpriteRenderer sprite;
     int layer;
-    [SerializeField] int y;
+    public int y;
     [SerializeField] GameObject pageLogic;
 
     // Start is called before the first frame update
@@ -18,26 +18,29 @@ public class PageStack : MonoBehaviour
     {
         sprite = GetComponent<SpriteRenderer>();
         col = sprite.color;
-        PageUpdate();
-        
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        PageUpdate();
+        if (pageLogic.GetComponent<TurningPage>().update == true)
+        {
+            PageUpdate();
+            print("update");
+        }
+        
     }
 
    public void PageUpdate()
     {
         if (right == true)
         {
-            layer = pageLogic.GetComponent<PageTurn>().pagesR[y];
+            layer = pageLogic.GetComponent<TurningPage>().pagesR[y];
         }
         else
         {
-            layer = pageLogic.GetComponent<PageTurn>().pagesL[y];
+            layer = pageLogic.GetComponent<TurningPage>().pagesL[y];
         }
 
 
